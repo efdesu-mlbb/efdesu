@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Top Up Diamond MLBB</title>
+<title>Top Up MLBB</title>
 
 <style>
 
 body{
-background:#0b0b0b;
+background:#0d0d0d;
 color:white;
 font-family:Arial;
 text-align:center;
-padding:30px;
-}
-
-h1{
-color:#4da3ff;
 }
 
 input{
-padding:12px;
-margin:8px;
+width:200px;
+padding:10px;
+margin:5px;
 border-radius:8px;
 border:none;
-width:220px;
 }
 
 button{
-background:#1f6bff;
+background:#2b6cff;
 color:white;
-border:none;
-padding:12px;
+padding:10px;
 margin:6px;
-width:200px;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
+border:none;
+border-radius:8px;
+width:120px;
 }
 
 button:hover{
-background:#3b82ff;
+background:#1f4ed8;
+}
+
+.box{
+margin-top:30px;
 }
 
 </style>
@@ -46,28 +43,55 @@ background:#3b82ff;
 
 <body>
 
-<h1>TOP UP DIAMOND</h1>
+<h2>TOP UP DIAMOND MLBB</h2>
 
-<p>Masukkan ID Mobile Legends</p>
+<div class="box">
 
 <input id="id" placeholder="User ID"><br>
 <input id="server" placeholder="Server"><br>
 
 <h3>Pilih Diamond</h3>
 
-<button onclick="order('86 Diamond')">86 Diamond</button>
-<button onclick="order('172 Diamond')">172 Diamond</button>
-<button onclick="order('257 Diamond')">257 Diamond</button>
-<button onclick="order('344 Diamond')">344 Diamond</button>
+<button onclick="pilih(5,1500)">5 💎</button>
+<button onclick="pilih(12,3500)">12 💎</button>
+<button onclick="pilih(19,5500)">19 💎</button>
+<button onclick="pilih(28,7500)">28 💎</button>
+<button onclick="pilih(44,11500)">44 💎</button>
+
+</div>
+
+<h3 id="total"></h3>
+
+<button onclick="order()">ORDER</button>
 
 <script>
 
-function order(diamond){
+let region = localStorage.getItem("region")
+let diamond = 0
+let harga = 0
+
+function pilih(d,h){
+
+diamond=d
+harga=h
+
+let pajak = harga*0.11
+let total = harga+pajak+300
+
+document.getElementById("total").innerHTML=
+"Total Bayar: Rp "+Math.floor(total)
+
+}
+
+function order(){
 
 let id=document.getElementById("id").value
 let server=document.getElementById("server").value
 
-let pesan="Halo admin saya mau top up MLBB%0AID:"+id+"%0AServer:"+server+"%0ADiamond:"+diamond
+let pesan="Halo saya mau top up MLBB"+
+"%0ARegion: "+region+
+"%0AID: "+id+"("+server+")"+
+"%0ADiamond: "+diamond
 
 window.open("https://wa.me/62821367491916?text="+pesan)
 
