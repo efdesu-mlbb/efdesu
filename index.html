@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EFDESU.MLBB</title>
+
+<style>
+
+body{
+background:#0b0b0b;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+h1{
+color:#4da3ff;
+}
+
+button{
+background:#1f6bff;
+color:white;
+border:none;
+padding:15px;
+margin:10px;
+width:220px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3b82ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>EFDESU.MLBB</h1>
+
+<p>Top Up & Tools Mobile Legends</p>
+
+<br>
+
+<button onclick="topup()">TOP UP DIAMOND</button>
+<br>
+
+<button>KALKULATOR WR</button>
+<br>
+
+<button>CEK INFO AKUN</button>
+<br>
+
+<button>CEK TTL AKUN</button>
+
+<script>
+
+function topup(){
+
+let id = prompt("Masukkan User ID");
+let server = prompt("Masukkan Server");
+let diamond = prompt("Jumlah Diamond");
+
+let pesan = "Halo saya mau top up MLBB%0AID:"+id+"%0AServer:"+server+"%0ADiamond:"+diamond;
+
+window.open("https://wa.me/6281367491916?text="+pesan);
+
+}
+
+</script>
+
+</body>
+</html>
