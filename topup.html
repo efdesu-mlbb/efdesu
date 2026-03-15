@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Top Up Diamond MLBB</title>
+
+<style>
+
+body{
+background:#0b0b0b;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:30px;
+}
+
+h1{
+color:#4da3ff;
+}
+
+input{
+padding:12px;
+margin:8px;
+border-radius:8px;
+border:none;
+width:220px;
+}
+
+button{
+background:#1f6bff;
+color:white;
+border:none;
+padding:12px;
+margin:6px;
+width:200px;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3b82ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>TOP UP DIAMOND</h1>
+
+<p>Masukkan ID Mobile Legends</p>
+
+<input id="id" placeholder="User ID"><br>
+<input id="server" placeholder="Server"><br>
+
+<h3>Pilih Diamond</h3>
+
+<button onclick="order('86 Diamond')">86 Diamond</button>
+<button onclick="order('172 Diamond')">172 Diamond</button>
+<button onclick="order('257 Diamond')">257 Diamond</button>
+<button onclick="order('344 Diamond')">344 Diamond</button>
+
+<script>
+
+function order(diamond){
+
+let id=document.getElementById("id").value
+let server=document.getElementById("server").value
+
+let pesan="Halo admin saya mau top up MLBB%0AID:"+id+"%0AServer:"+server+"%0ADiamond:"+diamond
+
+window.open("https://wa.me/62821367491916?text="+pesan)
+
+}
+
+</script>
+
+</body>
+</html>
