@@ -41,29 +41,25 @@ background:#3b82ff;
 <h1>EFDESU.MLBB</h1>
 <p>Pilih Region Akun Mobile Legends</p>
 
-<button onclick="region('Indonesia')">Indonesia</button><br>
+<button onclick="goRegion('Indonesia')">🇮🇩 Indonesia</button><br>
 
-<button onclick="region('Malaysia')">Malaysia</button><br>
+<button onclick="goRegion('Malaysia')">🇲🇾 Malaysia</button><br>
 
-<button onclick="region('Philippines')">Philippines</button>
+<button onclick="goRegion('Philippines')">🇵🇭 Philippines</button><br>
 
-<button onclick="region('Singapore')">Singapore</button><br>
+<button onclick="goRegion('Singapore')">🇸🇬 Singapore</button><br>
 
-<button onclick="region('Brazil')">Brazil</button><br>
+<button onclick="goRegion('Brazil')">🇧🇷 Brazil</button><br>
 
-<button onclick="region('Global')">Global</button>
+<button onclick="goRegion('Global')">🌍 Global</button>
 
 <script>
 
-function region(r){
+function goRegion(region){
 
-let id = prompt("Masukkan User ID");
-let server = prompt("Masukkan Server");
-let diamond = prompt("Jumlah Diamond");
+localStorage.setItem("region", region)
 
-let pesan="Halo saya mau top up MLBB%0ARegion:"+r+"%0AID:"+id+"%0AServer:"+server+"%0ADiamond:"+diamond;
-
-window.open("https://wa.me/62821367491916?text="+pesan);
+window.location.href="topup.html"
 
 }
 
